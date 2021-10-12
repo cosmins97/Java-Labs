@@ -3,9 +3,7 @@ package com.example.lab1;
 import java.io.*;
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -33,13 +31,26 @@ public class Lab1Servlet extends HttpServlet {
             //write to file
             FileWriter fileWriter = new FileWriter(filePath, true);
 
-            for(int i = 0; i < inputData.getValue(); i++){
-                fileWriter.write(inputData.getKey() + " ");
+            if(inputData.getSync().equals("True")){
+                synchronized (this){
+                    for(int i = 0; i < inputData.getValue(); i++){
+                        fileWriter.write(inputData.getKey() + " ");
+                    }
+
+                    fileWriter.write("- [" + Timestamp.from(Instant.now()) + "]");
+
+                    fileWriter.write("\n");
+                }
             }
+            else{
+                for(int i = 0; i < inputData.getValue(); i++){
+                    fileWriter.write(inputData.getKey() + " ");
+                }
 
-            fileWriter.write("- [" + Timestamp.from(Instant.now()) + "]");
+                fileWriter.write("- [" + Timestamp.from(Instant.now()) + "]");
 
-            fileWriter.write("\n");
+                fileWriter.write("\n");
+            }
 
             fileWriter.close();
 
@@ -92,9 +103,23 @@ public class Lab1Servlet extends HttpServlet {
             htmlRespone += manageRepositoryFile(filePath, inputData);
         }
 
-        htmlRespone += "<h2/></html>";
+        htmlRespone += "</h2></html>";
 
         // return response
         writer.println(htmlRespone);
+
+        //write in log
+        System.out.println("Method: " + request.getMethod());
+        System.out.println("Address: " + request.getRemoteAddr());
+        System.out.println("Language: " + request.getLocale().toString());
+        System.out.println("Parameters:");
+
+        Enumeration<String> parameters = request.getParameterNames();
+
+        while (parameters.hasMoreElements()) {
+            String parameterName = (String) parameters.nextElement();
+            String parameterValue = request.getParameter(parameterName);
+            System.out.println(parameterName + " : " + parameterValue);
+        }
     }
 }
