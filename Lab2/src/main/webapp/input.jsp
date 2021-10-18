@@ -12,7 +12,15 @@
         <select name="category">
             <option hidden disabled selected value> -- select an option -- </option>
             <c:forEach items="${categories}" var="category">
-                <option value=${category}>${category}</option>
+                <c:choose>
+                    <c:when test="${category eq selectedCategory}">
+                        <option value=${category} selected> ${category} </option>
+                    </c:when>
+                    <c:otherwise>
+                        <option value=${category}> ${category} </option>
+                    </c:otherwise>
+                </c:choose>
+
             </c:forEach>
         </select> <br/>
         <br>
@@ -20,6 +28,9 @@
         <br>
         Value: <input type="text" name="value"/> <br/>
         <br>
+        Captcha: ${captchaFirstNumber} + ${captchaSecondNumber} =
+        <input type="number" name="captchaAnswer"/> <br/>
+        <label>${captchaMessage}</label>
         <input type="submit" value="Submit" />
     </form>
 </body>

@@ -4,6 +4,6 @@
     <title>Lab2 - Result</title>
 </head>
 <body>
-result
+${resultTable}
 </body>
 </html>
