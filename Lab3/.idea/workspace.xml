@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Lab2:war exploded" />
+      <artifact name="Lab3:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e972f38-bff2-48f9-90fa-bb0fa1291291" name="Changes" comment="" />
+    <list default="true" id="7ebb2af2-6ecb-4b28-818f-2b1032d0d5b0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -33,37 +33,30 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectId" id="1zdbyFx6TBaVoCMy8xhV6i7yL8T" />
+  <component name="ProjectId" id="200RozbAxBMDTDfa6XHLqiaXG46" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
+    <property name="DatabaseDriversLRU" value="mysql&#10;postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="jdk.selected.JAVA_MODULE" value="17" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/javax.json-api-1.1.2.jar" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.54" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.54" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
-        <artifact name="Lab2:war exploded">
+        <artifact name="Lab3:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/Lab2_war_exploded" />
+            <option name="CONTEXT_PATH" value="/Lab3_war_exploded" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="4f3185a4-4b1f-401e-9e6b-9266a66bd916" />
+        <option name="BASE_DIRECTORY_NAME" value="60100efa-cbbd-419c-b074-5d29a1169b06" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -88,7 +81,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Lab2:war exploded" />
+          <artifact name="Lab3:war exploded" />
         </option>
       </method>
     </configuration>
@@ -96,17 +89,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5e972f38-bff2-48f9-90fa-bb0fa1291291" name="Changes" comment="" />
-      <created>1634481170111</created>
+      <changelist id="7ebb2af2-6ecb-4b28-818f-2b1032d0d5b0" name="Changes" comment="" />
+      <created>1635179704549</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1634481170111</updated>
-      <workItem from="1634481171450" duration="6512000" />
-      <workItem from="1634490011708" duration="2260000" />
-      <workItem from="1634492312721" duration="11012000" />
-      <workItem from="1634567326474" duration="9613000" />
-      <workItem from="1634719321489" duration="1494000" />
-      <workItem from="1635179602835" duration="84000" />
+      <updated>1635179704549</updated>
+      <workItem from="1635179706323" duration="11312000" />
     </task>
     <servers />
   </component>
