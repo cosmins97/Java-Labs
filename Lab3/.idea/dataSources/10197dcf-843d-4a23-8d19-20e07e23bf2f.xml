@@ -784,7 +784,7 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <IntrospectionStateNumber>744</IntrospectionStateNumber>
+      <IntrospectionStateNumber>754</IntrospectionStateNumber>
       <StartupTime>1635191907</StartupTime>
     </root>
     <database id="2" parent="1" name="postgres">
@@ -801,10 +801,12 @@ false Zulu
 13388||-9223372036854775808|U|G
 13388||10|U|G</Grants>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>745</IntrospectionStateNumber>
+      <IntrospectionStateNumber>755</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|16394|16395|1
 sequence|table|16403|16404|1
+sequence|table|16412|16413|1
+sequence|table|16421|16422|1
 </Relations>
     </database>
     <role id="3" parent="1" name="pg_database_owner">
@@ -878,7 +880,7 @@ sequence|table|16403|16404|1
       <Comment>standard public schema</Comment>
       <StateNumber>527</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>745</IntrospectionStateNumber>
+      <IntrospectionStateNumber>755</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="20" parent="2" name="adminpack">
@@ -999,19 +1001,43 @@ sequence|table|16403|16404|1
       <StateNumber>742</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
-    <table id="35" parent="19" name="accounts">
+    <sequence id="35" parent="19" name="students_exams_entry_id_seq">
+      <ObjectId>16421</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>752</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="36" parent="19" name="students_student_id_seq">
+      <ObjectId>16412</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>748</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <table id="37" parent="19" name="accounts">
       <ObjectId>16395</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>738</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
-    <table id="36" parent="19" name="exams">
+    <table id="38" parent="19" name="exams">
       <ObjectId>16404</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>742</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
-    <column id="37" parent="35" name="exam_id">
+    <table id="39" parent="19" name="students">
+      <ObjectId>16413</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>748</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <table id="40" parent="19" name="students_exams">
+      <ObjectId>16422</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>752</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <column id="41" parent="37" name="exam_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1019,27 +1045,27 @@ sequence|table|16403|16404|1
       <DefaultExpression>nextval(&apos;accounts_exam_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="38" parent="35" name="exam_name">
+    <column id="42" parent="37" name="exam_name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>738</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="39" parent="35" name="exam_date">
+    <column id="43" parent="37" name="exam_date">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>738</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="40" parent="35" name="exam_duration">
+    <column id="44" parent="37" name="exam_duration">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>738</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="41" parent="35" name="accounts_pkey">
+    <index id="45" parent="37" name="accounts_pkey">
       <ObjectId>16399</ObjectId>
       <StateNumber>738</StateNumber>
       <ColNames>exam_id</ColNames>
@@ -1049,7 +1075,7 @@ sequence|table|16403|16404|1
       <ClassIds>1978</ClassIds>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="42" parent="35" name="accounts_exam_name_key">
+    <index id="46" parent="37" name="accounts_exam_name_key">
       <ObjectId>16401</ObjectId>
       <StateNumber>738</StateNumber>
       <ColNames>exam_name</ColNames>
@@ -1059,20 +1085,20 @@ sequence|table|16403|16404|1
       <ClassIds>3126</ClassIds>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="43" parent="35" name="accounts_pkey">
+    <key id="47" parent="37" name="accounts_pkey">
       <ObjectId>16400</ObjectId>
       <StateNumber>738</StateNumber>
       <ColNames>exam_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>accounts_pkey</UnderlyingIndexName>
     </key>
-    <key id="44" parent="35" name="accounts_exam_name_key">
+    <key id="48" parent="37" name="accounts_exam_name_key">
       <ObjectId>16402</ObjectId>
       <StateNumber>738</StateNumber>
       <ColNames>exam_name</ColNames>
       <UnderlyingIndexName>accounts_exam_name_key</UnderlyingIndexName>
     </key>
-    <column id="45" parent="36" name="exam_id">
+    <column id="49" parent="38" name="exam_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1080,27 +1106,27 @@ sequence|table|16403|16404|1
       <DefaultExpression>nextval(&apos;exams_exam_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="46" parent="36" name="exam_name">
+    <column id="50" parent="38" name="exam_name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>742</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="47" parent="36" name="exam_date">
+    <column id="51" parent="38" name="exam_date">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>742</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="48" parent="36" name="exam_duration">
+    <column id="52" parent="38" name="exam_duration">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>742</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="49" parent="36" name="exams_pkey">
+    <index id="53" parent="38" name="exams_pkey">
       <ObjectId>16408</ObjectId>
       <StateNumber>742</StateNumber>
       <ColNames>exam_id</ColNames>
@@ -1110,7 +1136,7 @@ sequence|table|16403|16404|1
       <ClassIds>1978</ClassIds>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="50" parent="36" name="exams_exam_name_key">
+    <index id="54" parent="38" name="exams_exam_name_key">
       <ObjectId>16410</ObjectId>
       <StateNumber>742</StateNumber>
       <ColNames>exam_name</ColNames>
@@ -1120,18 +1146,103 @@ sequence|table|16403|16404|1
       <ClassIds>3126</ClassIds>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="51" parent="36" name="exams_pkey">
+    <key id="55" parent="38" name="exams_pkey">
       <ObjectId>16409</ObjectId>
       <StateNumber>742</StateNumber>
       <ColNames>exam_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>exams_pkey</UnderlyingIndexName>
     </key>
-    <key id="52" parent="36" name="exams_exam_name_key">
+    <key id="56" parent="38" name="exams_exam_name_key">
       <ObjectId>16411</ObjectId>
       <StateNumber>742</StateNumber>
       <ColNames>exam_name</ColNames>
       <UnderlyingIndexName>exams_exam_name_key</UnderlyingIndexName>
+    </key>
+    <column id="57" parent="39" name="student_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>748</StateNumber>
+      <DefaultExpression>nextval(&apos;students_student_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="58" parent="39" name="student_name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>748</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="59" parent="39" name="students_pkey">
+      <ObjectId>16417</ObjectId>
+      <StateNumber>748</StateNumber>
+      <ColNames>student_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="60" parent="39" name="students_student_name_key">
+      <ObjectId>16419</ObjectId>
+      <StateNumber>748</StateNumber>
+      <ColNames>student_name</ColNames>
+      <Unique>1</Unique>
+      <CollationIds>100</CollationIds>
+      <CollationNames>default</CollationNames>
+      <ClassIds>3126</ClassIds>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="61" parent="39" name="students_pkey">
+      <ObjectId>16418</ObjectId>
+      <StateNumber>748</StateNumber>
+      <ColNames>student_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>students_pkey</UnderlyingIndexName>
+    </key>
+    <key id="62" parent="39" name="students_student_name_key">
+      <ObjectId>16420</ObjectId>
+      <StateNumber>748</StateNumber>
+      <ColNames>student_name</ColNames>
+      <UnderlyingIndexName>students_student_name_key</UnderlyingIndexName>
+    </key>
+    <column id="63" parent="40" name="entry_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>752</StateNumber>
+      <DefaultExpression>nextval(&apos;students_exams_entry_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="64" parent="40" name="student_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>752</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="65" parent="40" name="exam_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>752</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="66" parent="40" name="students_exams_pkey">
+      <ObjectId>16426</ObjectId>
+      <StateNumber>752</StateNumber>
+      <ColNames>entry_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="67" parent="40" name="students_exams_pkey">
+      <ObjectId>16427</ObjectId>
+      <StateNumber>752</StateNumber>
+      <ColNames>entry_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>students_exams_pkey</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

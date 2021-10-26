@@ -11,5 +11,7 @@
 <a href="addstudent"><h2>Add student</h2></a>
 <br/>
 <a href="addexam"><h2>Add exam</h2></a>
+<br/>
+<a href="planification"><h2>See exams</h2></a>
 </body>
 </html>

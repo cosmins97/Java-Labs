@@ -24,4 +24,14 @@
         <url-pattern>/addstudent</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>PlanificationServlet</servlet-name>
+        <servlet-class>com.example.lab3.PlanificationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PlanificationServlet</servlet-name>
+        <url-pattern>/planification</url-pattern>
+    </servlet-mapping>
+
 </web-app>

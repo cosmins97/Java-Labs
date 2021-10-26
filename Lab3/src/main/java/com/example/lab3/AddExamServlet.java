@@ -82,6 +82,8 @@ public class AddExamServlet extends HttpServlet {
             e.printStackTrace();
         }
 
+        response.sendRedirect("index.jsp");
+
     }
 
     protected void doGet(HttpServletRequest request,

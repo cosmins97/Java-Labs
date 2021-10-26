@@ -18,8 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
+        <option value="jsf" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -32,6 +33,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="200RozbAxBMDTDfa6XHLqiaXG46" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -94,7 +98,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635179704549</updated>
-      <workItem from="1635179706323" duration="11312000" />
+      <workItem from="1635179706323" duration="11643000" />
+      <workItem from="1635262631386" duration="11616000" />
     </task>
     <servers />
   </component>
